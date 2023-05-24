@@ -5,19 +5,28 @@ const searchbar=document.getElementsByClassName('search-input');
   let search=document.getElementById('search-input');
   const formSubmit=document.getElementById('submit');
   const showList=document.getElementById('moviediv');
-  
+  const hideList=document.getElementById('back');
+    
 let show =true;
+function hideHandle(e){
+//  console.log(e.target)
+ e.target.innerHTML="Home"
+  show=!show;
+  render()
+}
 function showHandle(e){
     const target=e.target;
     
-  if(target.className==='newfilm'){
+    if(target.className==='newfilm'){
+    
+    // console.log(show ,"inside function") 
     if(show){
-        renderList();
-      }
-        show=!show;
+      renderList();
     }
-    if(target.id==="fav"){
-          handleFav(target)
+    show=!show;
+    }
+  if(target.id==="favourite"||target.id==="Unfavourite"){
+          handleFav()
          }
      if(target.id==="increase" ){
        
@@ -32,18 +41,10 @@ function showHandle(e){
     }
     
     // movies=handleShow
-    let favrite=movies[0].fav;
-    console.log(favrite)
-    function handleFav(fav){
-        console.log(favrite)
-        if(favrite){
-        fav.innerHTML="Un-favourite"
-        fav.style.background='red'
-      }else{
-        fav.innerHTML="Favourite"
-        fav.style.background='green'  
-        }
-    favrite=!favrite
+    function handleFav(){
+      let favrite=movies[0];
+      favrite.fav=!favrite.fav;
+     renderList();
   }
     
     function handleIncrease (){
@@ -70,6 +71,7 @@ function handleDecrease (){
 function renderList(){
   let content = "";
   movies.map(movi =>{
+    
     content += `
     <div class="movie-card">
     <div class="left">
@@ -92,8 +94,8 @@ function renderList(){
     <img  id="decrease" src="https://as1.ftcdn.net/v2/jpg/03/73/49/86/1000_F_373498649_nBxauQ0ipBSVrVcMpWWVmTpXu3BLvRyY.jpg" alt="decrease">
     
     </div>
-    <button id="fav">
-    Favourite
+    <button id=${movi.fav?"favourite":"Unfavourite"}>
+    ${movi.fav?"favourite":"Unfavourite"}
     </button>
     </div>
     `
@@ -141,32 +143,31 @@ function renderList(){
         
         let searchinbox=[];
         function inputHandle(e){
-          if(e.key="Enter"){
             const typed= e.target.value;
             searchinbox.push(typed);
           }
-          // console.log(searchinbox)
-        }
-        
-        function handleSearch(e) {
-          e.preventDefault();
-          const n=searchinbox.length;
-          const searchItem =searchinbox[n-1]
           
-          // there is only one movie in api
-          // for more than one movie use map;
-          
-          if(searchItem==movies[0].title){
-           const newMovies= movies[0]
-          document.title=movies[0].title;
-           renderSearch(newMovies);
-          showNotification("Found")
-        }else{
-          showNotification("Not available")
-        }
-        
-        
-        
+          function handleSearch(e) {
+            e.preventDefault();
+            const n=searchinbox.length;
+            const searchItem =searchinbox[n-1]
+            
+            // there is only one movie in api
+            // for more than one movie use map;
+            
+            if(searchItem==movies[0].title){
+              const newMovies= movies[0]
+              document.title=movies[0].title;
+              renderSearch(newMovies);
+              showNotification("Found")
+              // console.log(searchinbox ,"if found")
+            }else{
+              showNotification("Not available")
+              // console.log(searchinbox ,"NOt found")
+            }
+            search.focus()
+            search.value=""
+            searchinbox=[]; 
       }
       
       function initializeApp(){
@@ -175,5 +176,6 @@ function renderList(){
        formSubmit.addEventListener("submit", handleSearch);
       search.addEventListener("keyup",inputHandle)
       showList.addEventListener("click",showHandle)
+      hideList.addEventListener("click",hideHandle)
     }
     initializeApp()

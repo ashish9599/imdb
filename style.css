@@ -1,130 +1,139 @@
 body{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .navbar{
-    border-bottom: black;
-    box-shadow: 0 4px 8px white;
-    display: flex;
-    justify-content: space-between;
-    height: 61px;
-    /* background-color: burlywood; */
-   background-color: black;
-   color: white;
-  } 
+  border-bottom: black;
+  box-shadow: 0 4px 8px white;
+  display: flex;
+  justify-content: space-between;
+  height: 61px;
+  /* background-color: burlywood; */
+ background-color: black;
+ color: white;
+} 
 
 .navbar .left-navbar{
-    width: 19%;
+  width: 19%;
 }
 .navbar  a{
-  text-decoration: none;
+text-decoration: none;
 }
 
 
 .navbar .left-navbar p{
-    padding-left: 19px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #9a0606;
+  padding-left: 19px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #9a0606;
 }
 
 .navbar .left-navbar p:hover{
-    
   
-    color: #d7d6d6;
+
+  color: #d7d6d6;
 }
 .navbar .middle-navbar {
-    width: 45%;
-  }
+  width: 45%;
+}
 .navbar .middle-navbar button{
-  border: navajowhite;
-  /* padding: 5px; */
-  /* margin-top: 4px; */
-  position: relative;
-  top: 11px;
-  border-radius: 5px;
-  height: 33px;
-  }
+border: navajowhite;
+/* padding: 5px; */
+/* margin-top: 4px; */
+position: relative;
+top: 11px;
+border-radius: 5px;
+height: 33px;
+}
 .navbar .middle-navbar button:hover{
-  transform: scale(0.95);
-  background-color: rgb(216, 212, 212);
-  }
+transform: scale(0.95);
+background-color: rgb(216, 212, 212);
+}
 .navbar .middle-navbar button img{
-  width: 26px;
-    height: 30px;
+width: 26px;
+  height: 30px;
 }
 .navbar .middle-navbar input{
-    font-weight: bold;
-    width: 90%;
-    height: 30px;
-    border: 0.4px solid lightslategrey;
-    border-radius: 5px;
+  font-weight: bold;
+  width: 90%;
+  height: 30px;
+  border: 0.4px solid lightslategrey;
+  border-radius: 5px;
 
-  }
-  .navbar .right-navbar button{
-    margin-top: 13px;
-    font-size: 1.5rem;
-    background: black;
-    color: white;
-    border-radius: 6px;
-    transition: all 0.2s ease-in-out;
-  }
-  .navbar .right-navbar button:hover{
-  color: rgb(53, 46, 46);
-  background-color: rgb(198, 190, 190);
-  transform: scale(0.9);
-  }
-  
-  .navbar .right-navbar {
-    text-align: center;
-    width: 21%;
+}
+.navbar .middle-navbar input:focus{
+  background-color:rgb(214, 213, 213);
 
-  }
-  
-  .movieshrf{
-    text-decoration: none;
-    color: black;
-    text-align: center;
-  } 
-  #moviediv{
-    display: flex; 
-    flex-wrap: wrap;
-   
-  }
-  #moviediv .films{
-    width: 21%;
-    background: rgb(216, 240, 240);
-    margin: 33px;
-    overflow: hidden;
-    text-align: center;
+}
+.navbar .right-navbar button{
+  margin-top: 13px;
+  font-size: 1.5rem;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+.navbar .right-navbar button:hover{
+color: rgb(53, 46, 46);
+background-color: rgb(198, 190, 190);
+transform: scale(0.9);
+}
 
-  }
-  #moviediv .newfilms{
-    width: 30%;
-    background: rgb(214 233 229);
-    margin: 33px;
-    overflow: hidden;
-    text-align: center;
-    translate: 93%;
+.navbar .right-navbar {
+  text-align: center;
+  width: 21%;
 
-  }
-  #moviediv  .films img{
-    width: 268px;
-    height: 268px;
-    transition: all 0.3 ease-in-out;
-  }
-  #moviediv  .films img:hover{
-    transform: scale(0.88);
+}
 
-  }
-  
-  #moviediv .films p{
-    font-size: 1.2rem;
-    margin: 0;
-  }
-  
-  #moviediv p::first-letter{
-    text-transform: capitalize;
-    font-weight: bold;
-  }
-  
+.movieshrf{
+  text-decoration: none;
+  color: black;
+  text-align: center;
+} 
+#moviediv{
+  display: flex; 
+  flex-wrap: wrap;
+ 
+}
+#moviediv .films{
+  width: 21%;
+  background: rgb(216, 240, 240);
+  margin: 33px;
+  overflow: hidden;
+  text-align: center;
+
+}
+#moviediv .newfilms{
+  width: 30%;
+  background: rgb(214 233 229);
+  margin: 33px;
+  overflow: hidden;
+  text-align: center;
+  translate: 93%;
+
+}
+#moviediv  .films img{
+  width: 268px;
+  height: 268px;
+  transition: all 0.3 ease-in-out;
+}
+#moviediv  .films img:hover{
+  transform: scale(0.88);
+
+}
+
+#moviediv .films p{
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+#moviediv p::first-letter{
+  text-transform: capitalize;
+  font-weight: bold;
+}
+#favourite{
+  background-color: green;
+}
+#Unfavourite{
+  background-color:red;
+}
