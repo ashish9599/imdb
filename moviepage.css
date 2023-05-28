@@ -3,6 +3,7 @@
     margin: 40px;
     height: 400px;
     background-color: #eaedf1;
+
 }
 
 .movie-card .left {
@@ -49,11 +50,13 @@
 .footer .star-dis img{
     height: 25px;
     width: 25px;
+cursor: pointer;
 }
 
  .footer .star-dis .star-img{
     height: 30px;
     width: 30px;
+    cursor: pointer;
 }
  .footer button{
     font-size: 1.7rem;
@@ -63,6 +66,7 @@
     color: white;
     background: green;
     box-shadow: 0 3px 4px #5d645d;
+ cursor: pointer;
 }
  .footer button:hover{
  transform: scale(0.9);
