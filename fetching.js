@@ -1,6 +1,6 @@
 export default async function fetchTodo() {
     let Movie=[]
-    const response = await fetch('http://www.omdbapi.com/?i=tt3896198&apikey=c1c2b3de');
+    const response = await fetch('https://www.omdbapi.com/?i=tt3896198&apikey=c1c2b3de');
         const data = await response.json();
         
         Movie.push({
