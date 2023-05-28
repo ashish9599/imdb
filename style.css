@@ -72,6 +72,7 @@ width: 26px;
   color: white;
   border-radius: 6px;
   transition: all 0.2s ease-in-out;
+cursor: pointer;
 }
 .navbar .right-navbar button:hover{
 color: rgb(53, 46, 46);
